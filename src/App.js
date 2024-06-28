@@ -4,10 +4,12 @@ import './fetch';
 import { useEffect, useState } from 'react';
 
 import Dropdown from './Dropdown';
+import Grid from './Grid';
 
 function App() {
   const [data, setData] = useState();
   const [selectedTown, setSelectedTown] = useState();
+  const [filteredDataByTown, setFilteredDataByTown] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,11 +17,16 @@ function App() {
       setData(res);
     };
     fetchData().catch((e) => console.error(e));
-  }, []);
+    if (selectedTown) {
+      const filteredTowns = data.filter((i) => i.Town === selectedTown);
+      setFilteredDataByTown(filteredTowns);
+    }
+  }, [data, selectedTown]);
 
   return (
     <div>
       <Dropdown items={data} setSelectedTown={setSelectedTown} />
+      <Grid items={filteredDataByTown} />
     </div>
   );
 }
