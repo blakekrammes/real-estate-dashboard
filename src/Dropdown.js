@@ -15,7 +15,7 @@ const Dropdown = ({ items, setSelectedTown }) => {
         <MenuItems
           transition
           anchor='bottom end'
-          className='w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0'
+          className='w-52 origin-top-right rounded-xl border border-gray-800 bg-gray-800 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0'
         >
           {items && items.length > 0
             ? uniqBy(items, 'Town').map((i) => (
