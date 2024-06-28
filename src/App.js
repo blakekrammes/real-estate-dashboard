@@ -7,6 +7,7 @@ import Dropdown from './Dropdown';
 
 function App() {
   const [data, setData] = useState();
+  const [selectedTown, setSelectedTown] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <Dropdown items={data}/>
+      <Dropdown items={data} setSelectedTown={setSelectedTown} />
     </div>
   );
 }

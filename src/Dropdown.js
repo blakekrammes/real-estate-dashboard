@@ -1,11 +1,9 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { useEffect, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import { uniqBy } from 'lodash';
 
-const Dropdown = ({ items }) => {
-  const [town, setTown] = useState();
+const Dropdown = ({ items, setSelectedTown }) => {
   return (
     <div className='fixed top-24 w-52 text-right'>
       <Menu>
@@ -23,7 +21,7 @@ const Dropdown = ({ items }) => {
             ? uniqBy(items, 'Town').map((i) => (
                 <MenuItem key={i.MLS}>
                   <button
-                    onClick={() => setTown(i.Town)}
+                    onClick={() => setSelectedTown(i.Town)}
                     className='group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10'
                   >
                     {i.Town}
