@@ -16,11 +16,9 @@ function App() {
     fetchData().catch((e) => console.error(e));
   }, []);
 
-  if (data) console.log(data);
-
   return (
     <div>
-      <Dropdown />
+      <Dropdown items={data}/>
     </div>
   );
 }

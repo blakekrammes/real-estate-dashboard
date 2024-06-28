@@ -1,8 +1,11 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { useEffect, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
+import { uniqBy } from 'lodash';
 
-const Dropdown = () => {
+const Dropdown = ({ items }) => {
+  const [town, setTown] = useState();
   return (
     <div className='fixed top-24 w-52 text-right'>
       <Menu>
@@ -16,11 +19,18 @@ const Dropdown = () => {
           anchor='bottom end'
           className='w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0'
         >
-          <MenuItem>
-            <button className='group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10'>
-              Hi
-            </button>
-          </MenuItem>
+          {items && items.length > 0
+            ? uniqBy(items, 'Town').map((i) => (
+                <MenuItem key={i.MLS}>
+                  <button
+                    onClick={() => setTown(i.Town)}
+                    className='group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10'
+                  >
+                    {i.Town}
+                  </button>
+                </MenuItem>
+              ))
+            : null}
         </MenuItems>
       </Menu>
     </div>
