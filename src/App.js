@@ -3,6 +3,7 @@ import './fetch';
 
 import { useEffect, useState } from 'react';
 
+import Dropdown from './Dropdown';
 
 function App() {
   const [data, setData] = useState();
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div>
+      <Dropdown />
     </div>
   );
 }
