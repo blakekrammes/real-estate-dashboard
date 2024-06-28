@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import Dropdown from './Dropdown';
 import Grid from './Grid';
+import ScatterPlot from './ScatterPlot';
 
 function App() {
   const [data, setData] = useState();
@@ -24,9 +25,10 @@ function App() {
   }, [data, selectedTown]);
 
   return (
-    <div>
+    <div className='h-64'>
       <Dropdown items={data} setSelectedTown={setSelectedTown} />
       <Grid items={filteredDataByTown} />
+      <ScatterPlot items={filteredDataByTown} />
     </div>
   );
 }
