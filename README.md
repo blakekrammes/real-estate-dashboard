@@ -22,7 +22,7 @@
     - ~65 minutes
     - `src/ScatterPlot.js`
 
-5.5 I spent a couple more hours on the scatter plot correctly formatting the dates for the x-axis and tweaking other settings. I tweaked a couple of other things as well.
+5.5 I spent a couple more hours (in addition to the allotted 4) on the scatter plot correctly formatting the dates for the x-axis and tweaking other settings. I tweaked a couple of other things as well.
     
 Areas for improvement:
 - Make scatter plot properly responsive
