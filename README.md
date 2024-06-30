@@ -21,11 +21,13 @@
 5. Using Nivo create a scatter plot that plots the % Premium ((Sold Price - List Price) / List Price * 100) versus Closed Date to show the trend of home premiums over time. The data for this grid should also be filtered on selected Town (from #3).
     - ~65 minutes
     - `src/ScatterPlot.js`
+
+5.5 I spent a couple more hours on the scatter plot correctly formatting the dates for the x-axis and tweaking other settings. I tweaked a couple of other things as well.
     
 Areas for improvement:
-- Need to finish proper implementation for the scatter plot including date formatting for the x-axis and general chart   configuration to fit the data.
+- Make scatter plot properly responsive
 - General formatting/styling to make the design unified. I would want to create a tailwind theme to standardize things.
+- On headless-ui dropdown menu items, show which item is curently selected.
+- Display which town is selected more saliently. 
 - While not an expensive operation, avoid calculating grid columns every time a different town is selected in    
   `Grid.js`.
-- I would be tempted to use [vite](https://vitejs.dev/) instead of create-react-app if this were a long-lived project.
-  
